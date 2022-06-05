@@ -26,7 +26,7 @@ do
 	cd v"$i"
 	for j in {1..9}
 	do 
-		obabel -i pdbqt out_v"$i"_ligand_"$j".pdbqt -o pdb -O "$score"_e"$ex"_"$type"_v"$i"_out_"$j".pdb
+		/home/silverbot/miniconda3/bin/obabel -i pdbqt out_v"$i"_ligand_"$j".pdbqt -o pdb -O "$score"_e"$ex"_"$type"_v"$i"_out_"$j".pdb
 	done
 	cd ../
 done
