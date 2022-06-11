@@ -7,6 +7,8 @@ echo "docking type? (blind/bsite)"
 read type
 echo "scoring? (vina/vinardo)"
 read score
+echo "Ligand name?"
+read ligname
 
 for i in {1..5}
 do
@@ -36,7 +38,7 @@ do
 	for j in {1..9}
 	do
 		sed -i -e 's/ATOM  /HETATM/g' v"$i"/"$score"_e"$ex"_"$type"_v"$i"_out_"$j".pdb
-		python3 /home/$USER/pdb-tools-2.4.1/pdbtools/pdb_uniqname.py v"$i"/"$score"_e"$ex"_"$type"_v"$i"_out_"$j".pdb >> v"$i"/UNK_v"$i"_"$j".pdb
+		python3 /home/$USER/pdb-tools-2.4.1/pdbtools/pdb_uniqname.py v"$i"/"$score"_e"$ex"_"$type"_v"$i"_out_"$j".pdb >> v"$i"/"$ligname"_v"$i"_"$j".pdb
 	done
 done
 
@@ -46,7 +48,7 @@ do
 	for j in {1..9}
 	do 
 		mkdir -p v"$i"/"$j"_ligplot/
-		cp ../AB_clean.pdb v"$i"/"$j"_ligplot/com.pdb
-		grep " UNK " v"$i"/UNK_v"$i"_"$j".pdb >> v"$i"/"$j"_ligplot/com.pdb
+		cp ../../AB_clean.pdb v"$i"/"$j"_ligplot/com.pdb
+		grep " UNK " v"$i"/"$ligname"_v"$i"_"$j".pdb >> v"$i"/"$j"_ligplot/com.pdb
 	done
 done
