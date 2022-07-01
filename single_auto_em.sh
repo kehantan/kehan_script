@@ -25,7 +25,7 @@ dock_type=$(echo $current_loc | tr -t "_" "\n" | awk NR==4)
 dock_run=$(echo $current_loc | tr -t "_" "\n" | awk NR==5)
 out_conf=$(echo $current_loc | tr -t "_" "\n" | awk NR==7)
 
-cp "$receptor"_UNK_"$exhaust"_"$dock_type"_"$dock_run"_out_"$out_conf"/UNK.acpype/{UNK_GMX.itp,UNK_GMX.gro} .
+# cp "$receptor"_UNK_"$exhaust"_"$dock_type"_"$dock_run"_out_"$out_conf"/UNK.acpype/{UNK_GMX.itp,UNK_GMX.gro} .
 
 
 # separate acpype output into appropriate file
@@ -39,7 +39,7 @@ mv xx01 UNK_GMX.itp
 
 
 # create protein and ligand complex
-gmx pdb2gmx -f model.pdb -o processed.gro -water tip3p -ignh -ff amber99sb-ildn
+echo 1 | gmx pdb2gmx -f receptor.pdb -o processed.gro -water tip3p -ignh
 head -n -1 processed.gro >> complex.gro
 grep " UNK " UNK_GMX.gro >> complex.gro
 tail -n 1 processed.gro >> complex.gro

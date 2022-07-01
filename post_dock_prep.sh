@@ -42,13 +42,13 @@ do
 	done
 done
 
-# ligplot
+# prepare for ligplot
 for i in {1..5}
 do 
 	for j in {1..9}
 	do 
 		mkdir -p v"$i"/"$j"_ligplot/
-		cp ../../AB_clean.pdb v"$i"/"$j"_ligplot/com.pdb
-		grep " UNK " v"$i"/"$ligname"_v"$i"_"$j".pdb >> v"$i"/"$j"_ligplot/com.pdb
+		grep ATOM receptor.pdb >> v"$i"/"$j"_ligplot/com.pdb
+		grep " $ligname " v"$i"/"$ligname"_v"$i"_"$j".pdb >> v"$i"/"$j"_ligplot/com.pdb
 	done
 done
