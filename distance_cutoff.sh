@@ -4,6 +4,10 @@
 # currently set to 7 angstrom
 
 
+set -e 
+
+
+# write compound that is less than or equal to 7 angstrom from COM of important amino acid residues to new file 
 for i in CHEMBL*
 do
 	cd $i

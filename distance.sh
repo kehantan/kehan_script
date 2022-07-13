@@ -1,8 +1,18 @@
 #!/bin/sh
 
-# get distance between two points in 3d space
+set -e 
+
+## get distance between two points in 3d space
+
+# center of mass (COM) for important amino acid residues in binding site of 3u1i
+# Catalytic triad: HIS 51, ASP 75, SER 135
+# Other important residues: TYR 161
+x1=24.213
+y1=-16.191
+z1=10.939
 
 
+# calculate distance between COM of important residues and COM for ligand
 for i in CHEMBL*
 do 
 	cd $i
@@ -11,9 +21,6 @@ do
 	do
 		for k in {1..9}
 		do 
-			x1=24.213
-			y1=-16.191
-			z1=10.939
 			a=$(python3 /home/$USER/protein-science/scripts-and-tools/center_of_mass/center_of_mass.py "$i"_v"$j"_ligand_"$k".pdb)
 			x2=$(echo $a | sed -e 's/\[//' | sed -e 's/\]//' | sed -e 's/\,/ /g' | awk '{print $1}')
 			y2=$(echo $a | sed -e 's/\[//' | sed -e 's/\]//' | sed -e 's/\,/ /g' | awk '{print $2}')

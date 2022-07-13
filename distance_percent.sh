@@ -5,6 +5,10 @@
 # as percentage
 
 
+set -e
+
+
+# get percentage
 for i in CHEMBL*
 do
 	a=$(cat "$i"/distance_le_7 | wc -l)
@@ -12,5 +16,7 @@ do
 	echo "$i "$a"/27 "$percentage"" >> tmp-in_binding_site
 done
 
+
+#sort
 sort -k 3nr tmp-in_binding_site >> in_binding_site-percent
-rm tmp-distance
+rm tmp-in_binding_site
