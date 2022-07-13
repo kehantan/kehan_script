@@ -16,3 +16,4 @@ do
 done
 
 sort -k 4n tmp-vina >> vina
+rm tmp-vina
