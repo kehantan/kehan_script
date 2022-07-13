@@ -1,9 +1,9 @@
 #!/bin/sh
-set -e 
 
-echo " "
-echo "###  $(pwd)  ###"
-echo " "
+# edit ligand output file from acpype
+
+
+set -e 
 
 # separate acpype output into appropriate file
 csplit -s -k UNL*GMX.itp /atomtypes/

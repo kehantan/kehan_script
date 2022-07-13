@@ -1,11 +1,11 @@
 #!/bin/sh
+
+# for g_mmpbsa calculation in auto em
+
 set -e 
 
 source /opt/gromacs-2021.2/bin/GMXRC
 
-echo " "
-echo "###  $(pwd)  ###"
-echo " "
 
 # prepare dir for mmpbsa
 mkdir -p g_mmpbsa/em/

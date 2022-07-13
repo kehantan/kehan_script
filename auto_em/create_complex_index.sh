@@ -1,7 +1,12 @@
 #!/bin/sh
+
+# create index file for gromacs
+
+
 set -e 
 
 source /opt/gromacs-2021.2/bin/GMXRC
+
 
 echo " "
 echo "###  $(pwd)  ###"

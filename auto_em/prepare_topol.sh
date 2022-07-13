@@ -1,11 +1,12 @@
 #!/bin/sh
+
+# prepare topology file for gromacs 
+# include atomtypes
+# include ligand 
+
 set -e 
 
 source /opt/gromacs-2021.2/bin/GMXRC
-
-echo " "
-echo "###  $(pwd)  ###"
-echo " "
 
 # insert ligand atomtypes and topology into topol.top
 sed -i -e "/forcefield.itp/a \#include \"UNL_atomtypes.dat\"" topol.top

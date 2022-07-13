@@ -1,8 +1,8 @@
 #!/bin/sh
 
+## convert smi to pdb and pdbqt
+
 # convert smi to pdb
-
-
 a=$(cat smiles_list | wc -l)
 
 for i in `seq 1 $a` 
@@ -17,3 +17,10 @@ do
   obminimize -ff UFF -n 5000 tmp-"$filename"-pdb-h-renum.pdb > "$filename".pdb
   rm tmp-*
 done
+
+
+# convert pdb to pdbqt 
+for i in CHEMBL*pdb
+do
+	/opt/mgltools_x86_64Linux2_1.5.7/bin/pythonsh /opt/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py -l "$i"
+done 	

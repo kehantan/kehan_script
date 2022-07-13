@@ -1,14 +1,16 @@
 #!/bin/sh
-set -e 
 
+# prepare protein ligand complex for gromacs
+
+
+set -e 
 source /opt/gromacs-2021.2/bin/GMXRC
 
-echo " "
-echo "###  $(pwd)  ###"
-echo " "
 
-# create protein and ligand complex
+# prepare protein 
 echo 1 | gmx pdb2gmx -f receptor.pdb -o processed.gro -water tip3p -ignh
+
+# prepare complex 
 head -n -1 processed.gro >> complex.gro
 grep " UNL " UNL*GMX.gro >> complex.gro
 tail -n 1 processed.gro >> complex.gro
