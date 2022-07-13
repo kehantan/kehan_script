@@ -3,10 +3,13 @@
 ## extract all vina binding affinity
 ## then sort according to binding affinity
 
+set -e 
+
 
 for i in CHEMBL*
 do 
-	for j in{1..3}
+	echo $i
+	for j in {1..3}
 	do
 		for k in {1..9}
 		do 
@@ -15,5 +18,7 @@ do
 	done
 done
 
+
+# sort according to binding affinity 
 sort -k 4n tmp-vina >> vina
 rm tmp-vina

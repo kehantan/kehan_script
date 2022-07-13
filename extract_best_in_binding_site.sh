@@ -3,6 +3,7 @@
 ## extract from best, which is also in binding site
 ## work specifically with greater than or equal to 60 percent of in_binding_site
 
+
 set -e 
 
 
