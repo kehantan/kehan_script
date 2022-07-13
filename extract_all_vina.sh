@@ -15,4 +15,4 @@ do
 	done
 done
 
-sork -k 4n tmp-vina >> vina
+sort -k 4n tmp-vina >> vina
