@@ -5,6 +5,7 @@
 
 set -e 
 
+
 # smina
 for i in {1..31}
 do
