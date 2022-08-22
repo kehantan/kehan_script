@@ -1,0 +1,3 @@
+# use zsh as default shell for tmux, only for current session 
+tmux new-session /bin/zsh \; set default-shell /bin/zsh
+

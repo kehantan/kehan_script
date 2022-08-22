@@ -5,7 +5,8 @@
 
 set -e 
 
-# separate acpype output into appropriate file
+
+# separate acpype output into appropriate individual file
 csplit -s -k UNL*GMX.itp /atomtypes/
 rm xx00
 mv xx01 tmp

@@ -8,17 +8,28 @@ set -e
 
 for i in CHEMBL*
 do 
-	echo $i
+	cd $i
+	echo $(pwd)
 	for j in {1..3}
 	do
 		for k in {1..9}
 		do 
-			echo "$i v"$j" $(sed -n 39,49p "$i"/log_v"$j".txt | awk NR==$k | awk '{print $1,$2}')" >> tmp-vina
+			a=$(sed -n 39,49p log_v"$j".txt | awk NR==$k | awk '{print $1,$2}')
+			echo "$i v"$j" $a" >> tmp-vina
 		done
 	done
+	sort -k 4n tmp-vina >> vina
+	rm tmp-vina
+	cd ../
 done
 
 
+for i in CHEMBL*
+do 
+	cat "$i"/vina >> tmp-vina_all
+done 
+
+
 # sort according to binding affinity 
-sort -k 4n tmp-vina >> vina
-rm tmp-vina
+sort -k 4n tmp-vina_all >> vina_all
+rm tmp-vina_all

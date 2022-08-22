@@ -1,10 +1,11 @@
 #!/bin/sh
 
+# create index file for heavy atoms of ligand 
 # create ligand restraints for gromacs 
+# 
 
 
 set -e 
-
 source /opt/gromacs-2021.2/bin/GMXRC
 
 

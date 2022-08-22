@@ -1,18 +1,13 @@
 #!/bin/sh
 
-# create index file for gromacs
+# create protein-ligand index file in gromacs
 
 
 set -e 
-
 source /opt/gromacs-2021.2/bin/GMXRC
 
 
-echo " "
-echo "###  $(pwd)  ###"
-echo " "
-
-# create pro-lig index file
+# create protein ligand index file
 rm -f index.ndx
 rm -f choices.txt
 echo "1|13" >> choices.txt
