@@ -5,6 +5,7 @@
 
 set -e 
 
+rm -rf vina_all
 
 for i in CHEMBL*
 do 

@@ -6,6 +6,9 @@
 
 set -e 
 
+rm -rf smina_best_in_binding_site
+rm -rf vina_best_in_binding_site
+rm -rf vinardo_best_in_binding_site
 
 count=$(cat in_binding_site-ge60percent | wc -l)
 

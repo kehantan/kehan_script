@@ -5,6 +5,10 @@
 
 set -e 
 
+rm -rf vina_best
+rm -rf vinardo_best
+rm -rf smina_best
+
 
 # vina
 for i in CHEMBL*

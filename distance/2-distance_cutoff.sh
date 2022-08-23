@@ -11,7 +11,7 @@ set -e
 for i in CHEMBL*
 do
 	cd $i
-	echo $(pwd)
+#	echo $(pwd)
 	for j in {1..27}
 	do 
 		a=$(awk NR==$j distance | awk '{print $4}') 

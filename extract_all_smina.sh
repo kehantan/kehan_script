@@ -5,6 +5,8 @@
 
 set -e 
 
+rm -rf smina_all
+
 
 for i in CHEMBL*
 do

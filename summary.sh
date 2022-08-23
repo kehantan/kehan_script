@@ -3,9 +3,11 @@
 # make summary file including
 # ChEMBL ID, run #, conformation, number of conformations in binding site/total conformations, percentage
 
-
 set -e 
 
+rm -rf sum-vina_best_in_binding_site_lipinski_le1
+rm -rf sum-vinardo_best_in_binding_site_lipinski_le1
+rm -rf sum-smina_best_in_binding_site_lipinski_le1
 
 # vina
 count1=$(cat vina_best_in_binding_site_lipinski_le1 | wc -l)

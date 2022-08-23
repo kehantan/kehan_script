@@ -6,6 +6,8 @@
 set -e 
 
 
+rm -rf vinardo_all
+
 for i in CHEMBL*
 do 
 	cd $i

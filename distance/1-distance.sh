@@ -16,7 +16,7 @@ z1=10.939
 for i in CHEMBL*
 do 
 	cd $i
-	echo $(pwd)
+#	echo $(pwd)
 	for j in {1..3}
 	do
 		for k in {1..9}

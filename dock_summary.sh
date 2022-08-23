@@ -1,9 +1,7 @@
 #!/bin/sh
 
 # summary of all scoring and percentage of conformations in binding site
-
-# cross check flow
-# best binding affinity > binding site > lipinski rule
+# cross check flow: best binding affinity > binding site > lipinski rule
 
 
 set -e 
@@ -31,6 +29,7 @@ done
 # make summary 
 # binding affinity calculated by different scoring functions
 # percentage of docked conformations that is located in binding site 
+
 count=$(cat exist_in_all_vina_vinardo_smina_best_in_binding_site_lipinski_le1 | wc -l)
 for i in `seq 1 "$count"`
 do 
