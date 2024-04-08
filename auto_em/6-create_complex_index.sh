@@ -4,7 +4,7 @@
 
 
 set -e 
-source /opt/gromacs-2021.2/bin/GMXRC
+source /opt/gromacs-2024.1/bin/GMXRC
 
 
 # create protein ligand index file
