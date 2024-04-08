@@ -6,7 +6,7 @@
 
 
 set -e 
-source /opt/gromacs-2021.2/bin/GMXRC
+source /opt/gromacs-2024.1/bin/GMXRC
 
 
 # insert ligand atomtypes and topology into topol.top
