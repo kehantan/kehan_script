@@ -1,0 +1,8 @@
+# Hbind results analysis
+# Find number of hbonds with catalytic triad from ligand
+for i in CHEMBL*; do cd "$i"; echo $(pwd); rm -rf ge1; for j in {1..3}; do for k in {1..9}; do a=$(cat hbind_out_v"$j"_ligand_"$k".txt | grep "  B  " | egrep " 51 | 75 | 135 " | wc -l); if [ "$a" -ge 1 ]; then echo "out_v"$j"_ligand_"$k" $a " >> ge1; fi; done; done; cd ../; done
+
+# Summary of all protein-ligand hbonds with catalytic triad 
+for i in CHEMBL*; do echo "$i $(cat "$i"/ge1 | wc -l)" >> ge1; done
+
+cat ge1 | sort -k2nr
